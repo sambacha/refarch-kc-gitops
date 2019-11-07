@@ -5,10 +5,10 @@ Event Driven Architecture reference implementation GitOps repository, in support
 ## Deploying KContainer Reference Implementation using GitOps templates
 
 1. Create a new branch based on the `starter-template` branch, using the format of `<namespace>/<clustername>`
-   - Example: `git checkout starter-template && git checkout -b demo-sandbox/roks-demos.us-east.containers.appdomain.cloud`
+   - Example: `git checkout starter-template && git checkout -b oring/eda-demo/gse-eda-demos.us-east.containers.appdomain.cloud`
 2. Update the UI microservice's Ingress deployment YAML to contain an appropriate `host` value.
    - Reference: [Red Hat OpenShift on IBM Cloud - Exposing apps that are inside your cluster to the public](https://cloud.ibm.com/docs/openshift?topic=openshift-ingress#ingress_expose_public)
-   - Example: `kcontainer-demo.roks-demos.us-east.containers.appdomain.cloud`
+   - Example: `kcontainer-demo.gse-eda-demos.us-east.containers.appdomain.cloud`
 3. Commit and push your updated branch to a git repository that will be accessible from your cluster.
 3. Create all the necessary pre-requisites in the target cluster:
    1. Ensure ArgoCD is installed and functional. [Link](https://argoproj.github.io/argo-cd/getting_started/)
@@ -23,7 +23,7 @@ Event Driven Architecture reference implementation GitOps repository, in support
     ```bash
     argocd app create kcontainer-order-command-ms \
     --repo https://github.com/ibm-cloud-architecture/refarch-kc-gitops.git \
-    --revision demo-sandbox/roks-demos.us-east.containers.appdomain.cloud \
+    --revision eda-demo/gse-eda-demos.us-east.containers.appdomain.cloud \
     --path kc-ui --directory-recurse --dest-server https://kubernetes.default.svc \
     --dest-namespace demo-sandbox --sync-policy automated --self-heal --auto-prune
     ```
@@ -33,13 +33,13 @@ Event Driven Architecture reference implementation GitOps repository, in support
     source:
       repoURL: 'https://github.com/ibm-cloud-architecture/refarch-kc-gitops.git'
       path: kc-ui
-      targetRevision: demo-sandbox/roks-demos.us-east.containers.appdomain.cloud
+      targetRevision: eda-demo/gse-eda-demos.us-east.containers.appdomain.cloud
       directory:
         recurse: true
         jsonnet: {}
     destination:
       server: 'https://kubernetes.default.svc'
-      namespace: demo-sandbox
+      namespace: eda-demo
     syncPolicy:
       automated:
         prune: true
