@@ -5,7 +5,7 @@ Event Driven Architecture reference implementation GitOps repository, in support
 ## Deploying KContainer Reference Implementation using GitOps templates
 
 1. Create a new branch based on the `starter-template` branch, using the format of `<namespace>/<clustername>`
-   - Example: `git checkout starter-template && git checkout -b oring/eda-demo/gse-eda-demos.us-east.containers.appdomain.cloud`
+   - Example: `git checkout starter-template && git checkout -b origin/eda-demo/gse-eda-demos.us-east.containers.appdomain.cloud`
 2. Update the UI microservice's Ingress deployment YAML to contain an appropriate `host` value.
    - Reference: [Red Hat OpenShift on IBM Cloud - Exposing apps that are inside your cluster to the public](https://cloud.ibm.com/docs/openshift?topic=openshift-ingress#ingress_expose_public)
    - Example: `kcontainer-demo.gse-eda-demos.us-east.containers.appdomain.cloud`
