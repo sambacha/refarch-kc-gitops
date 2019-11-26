@@ -23,7 +23,7 @@ spec:
       serviceAccountName: kcontainer-runtime
       containers:
       - name: "voyagesms"
-        image: "ibmcase/kcontainer-voyages-ms:0.1.11"
+        image: "ibmcase/kcontainer-voyages-ms:0.1.12"
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
