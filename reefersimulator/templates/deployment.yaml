@@ -9,7 +9,7 @@ metadata:
     helm.sh/chart: kcontainer-reefer-simulator-0.1.0
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "1.0"
-    app.kubernetes.io/managed-by: Tiller 
+    app.kubernetes.io/managed-by: Tiller
 spec:
   replicas: 1
   selector:
@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: kcontainer-reefer-simulator
-          image: "ibmcase/kcontainer-reefer-simulator:latest"
+          image: "ibmcase/kcontainer-reefer-simulator:0.1.5"
           imagePullPolicy: Always
           ports:
             - name: http
@@ -39,7 +39,7 @@ spec:
               path: /
               port: http
           resources:
-            null   
+            null
           env:
             - name: PORT
               value: "8080"
