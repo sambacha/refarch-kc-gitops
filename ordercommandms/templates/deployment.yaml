@@ -42,11 +42,11 @@ spec:
                 name: "demo-kafka-brokers"
                 key: brokers
           - name: ORDER_TOPIC
-            value: "orders_integration"
+            value: "cd-integration_orders"
           - name: ORDERCOMMAND_TOPIC
-            value: "orderCommands_integration"
+            value: "cd-integration_orderCommands"
           - name: ERROR_TOPIC
-            value: "errors_integration"
+            value: "cd-integration_errors"
           - name: KAFKA_APIKEY
             valueFrom:
               secretKeyRef:
