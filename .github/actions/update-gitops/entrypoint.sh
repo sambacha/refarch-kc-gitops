@@ -1,6 +1,8 @@
 #!/bin/bash
 
 REGISTRY_URL="https://registry.hub.docker.com/v1/repositories/__IMAGE_NAME__/tags"
+
+##TODO## Explode into CSL for 'input'
 COMPONENTS=(
   fleetms
   kc-ui
@@ -15,9 +17,7 @@ COMPONENTS=(
 #  kc-ui
 #)
 
-ROOT_DIR=$(pwd)
-echo $ROOT_DIR
-
+##TODO## Parameterize into 'input'
 REPO_NAME=ibmcase
 
 for COMPONENT in ${COMPONENTS[@]}; do
@@ -38,6 +38,8 @@ for COMPONENT in ${COMPONENTS[@]}; do
 
   # Replace current version (in the pattern of kcontainer-ui:X.Y.Z)
   sed -i "" -e "s/${IMAGE_SHORT_NAME}\:${CURRENT_VER_TAG}/${IMAGE_SHORT_NAME}\:${LATEST_VER_TAG}/" ${COMPONENT}/templates/deployment.yaml
+
+  cat ${COMPONENT}/templates/deployment.yaml
 
   echo ""
 done
