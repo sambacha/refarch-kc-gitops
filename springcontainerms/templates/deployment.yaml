@@ -42,13 +42,13 @@ spec:
                 name: "demo-kafka-brokers"
                 key: brokers
           - name: KCSOLUTION_CONTAINERS
-            value: "containers"
+            value: "containers_integration"
           - name: KCSOLUTION_ORDERS
-            value: "orders"
+            value: "orders_integration"
           - name: KCSOLUTION_REJECTED_ORDERS
-            value: "rejected-orders"
+            value: "rejected-orders_integration"
           - name: KCSOLUTION_ALLOCATED_ORDERS
-            value: "allocated-orders"
+            value: "allocated-orders_integration"
           - name: KAFKA_APIKEY
             valueFrom:
               secretKeyRef:

@@ -51,9 +51,9 @@ spec:
                   name: "demo-kafka-brokers"
                   key: brokers
             - name: TELEMETRY_TOPIC
-              value: "reeferTelemetries"
+              value: "reeferTelemetries_integration"
             - name: CONTAINER_TOPIC
-              value: "containers"
+              value: "containers_integration"
             - name: KAFKA_APIKEY
               valueFrom:
                 secretKeyRef:
