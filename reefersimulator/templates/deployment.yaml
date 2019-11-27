@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: kcontainer-reefer-simulator
-          image: "ibmcase/kcontainer-reefer-simulator:0.1.5"
+          image: "ibmcase/kcontainer-reefer-simulator:0.1.6"
           imagePullPolicy: Always
           ports:
             - name: http
