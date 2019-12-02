@@ -11,7 +11,7 @@ metadata:
     app.kubernetes.io/version: "1.0"
     app.kubernetes.io/managed-by: Tiller
 spec:
-  replicas: 0
+  replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
