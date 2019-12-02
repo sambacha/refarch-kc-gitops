@@ -12,6 +12,7 @@ metadata:
     app.kubernetes.io/managed-by: Tiller
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: kcontainer-reefer-simulator
