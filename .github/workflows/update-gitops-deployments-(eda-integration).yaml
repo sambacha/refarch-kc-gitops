@@ -5,7 +5,7 @@ on:
       - master
       - eda-integration/gse-eda-demos.us-east.containers.appdomain.cloud
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/20 * * * *'
   repository_dispatch:
 
 env:
@@ -18,7 +18,8 @@ jobs:
     - name: Checkout default sandbox branch
       id: checkout-sandbox-branch
       run: |
-        git checkout ${DESIRED_BRANCH}
+        git fetch --all --verbose --progress
+        git checkout --progress ${DESIRED_BRANCH}
     - name: Update GitOps YAMLs
       id: update-gitops-yamls
       uses: ibm-cloud-architecture/actions-update-gitops@v1.0.3
