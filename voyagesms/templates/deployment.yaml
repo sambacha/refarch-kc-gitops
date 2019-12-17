@@ -24,7 +24,6 @@ spec:
       containers:
       - name: "voyagesms"
         image: "ibmcase/kcontainer-voyages-ms:0.1.15"
-        #image: "ibmcase/kcontainer-voyages-ms:timeout-debug"
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
