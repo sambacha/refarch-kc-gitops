@@ -3,29 +3,29 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: release-name-kc-ui
+  name: RELEASE-NAME-kc-ui
   labels:
     app: kc-ui
     chart: kc-ui-1.0.0
-    release: release-name
-    heritage: Tiller
+    release: RELEASE-NAME
+    heritage: Helm
 spec:
   replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: kc-ui
-      release: release-name
+      release: RELEASE-NAME
   template:
     metadata:
       labels:
         app: kc-ui
-        release: release-name
+        release: RELEASE-NAME
     spec:
       serviceAccountName: kcontainer-runtime
       containers:
       - name: "kc-ui"
-        image: "ibmcase/kcontainer-ui:0.1.18"
+        image: "kcontainer-ui:latest"
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -41,7 +41,7 @@ spec:
             memory: "300Mi"
         env:
           - name: APPLICATION_NAME
-            value: "release-name"
+            value: "RELEASE-NAME"
           - name: PORT
             value : "3010"
           - name: FLEETMS_SERVICE_HOST
@@ -60,15 +60,19 @@ spec:
             value: "voyagesms-service"
           - name: VOYAGESMS_SERVICE_PORT
             value: "3000"
+          - name: CONTAINERMS_SERVICE_HOST
+            value: "springcontainerms-service"
+          - name: CONTAINERMS_SERVICE_PORT
+            value: "8080"
           - name: KAFKA_BROKERS
             valueFrom:
               configMapKeyRef:
-                name: "demo-kafka-brokers"
+                name: "es-kafka-brokers"
                 key: brokers
           - name: PROBLEM_TOPIC
-            value: "eda-integration-bluewaterProblem"
+            value: "bluewaterProblem"
           - name: SHIP_TOPIC
-            value: "eda-integration-bluewaterShip"
+            value: "bluewaterShip"
           - name: KAFKA_APIKEY
             valueFrom:
               secretKeyRef:
