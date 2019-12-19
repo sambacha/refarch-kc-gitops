@@ -3,7 +3,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: RELEASE-NAME-kc-ui
+  name: release-name-kc-ui
   labels:
     app: kc-ui
     chart: kc-ui-1.0.0
