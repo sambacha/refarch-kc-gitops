@@ -1,0 +1,17 @@
+---
+# Source: springcontainerms/templates/route.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  #TODO Add default name overrides?
+  name: kcontainer-spring-container
+  labels:
+    chart: 'springcontainerms-1.0.0'
+spec:
+  path: /
+  to:
+    kind: Service
+    name: "springcontainerms-service"
+    weight: 100
+  port:
+    targetPort: http

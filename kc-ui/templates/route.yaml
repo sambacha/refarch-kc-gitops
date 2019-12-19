@@ -1,0 +1,17 @@
+---
+# Source: kc-ui/templates/route.yaml
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  #TODO Add default name overrides?
+  name: kcontainer-ui
+  labels:
+    chart: 'kc-ui-1.0.0'
+spec:
+  path: /
+  to:
+    kind: Service
+    name: "kc-ui-service"
+    weight: 100
+  port:
+    targetPort: http
