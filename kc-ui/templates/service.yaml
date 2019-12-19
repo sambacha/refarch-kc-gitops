@@ -13,5 +13,4 @@ spec:
     protocol: TCP
     port: 3010
   selector:
-    app: kc-ui
-    release: release-name
+    app: "kc-ui-selector"
