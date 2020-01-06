@@ -18,7 +18,7 @@ spec:
       serviceAccountName: kcontainer-runtime
       containers:
       - name: "kc-ui"
-        image: "ibmcase/kcontainer-ui:0.1.21"
+        image: "ibmcase/kcontainer-ui:0.1.22"
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
