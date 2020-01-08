@@ -41,6 +41,12 @@ spec:
               configMapKeyRef:
                 name: "demo-kafka-brokers"
                 key: brokers
+          - name: BPM_ANOMALY
+            valueFrom:
+              configMapKeyRef:
+                name: "bpm-anomaly"
+                key: url
+                optional: true
           - name: KCSOLUTION_CONTAINERS
             value: "eda-integration-containers"
           - name: KCSOLUTION_ORDERS
