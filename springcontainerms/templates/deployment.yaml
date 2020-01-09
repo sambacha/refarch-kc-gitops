@@ -18,8 +18,7 @@ spec:
       serviceAccountName: kcontainer-runtime
       containers:
       - name: "springcontainerms"
-        #image: "ibmcase/kcontainer-spring-container-ms:0.1.16"
-        image: "osowski/kcontainer-spring-container-ms:delete-api-v3"
+        image: "ibmcase/kcontainer-spring-container-ms:0.1.19"
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
