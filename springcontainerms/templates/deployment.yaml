@@ -19,7 +19,7 @@ spec:
       containers:
       - name: "springcontainerms"
         #image: "ibmcase/kcontainer-spring-container-ms:0.1.16"
-        image: "osowski/kcontainer-spring-container-ms:delete-api-v2"
+        image: "osowski/kcontainer-spring-container-ms:delete-api-v3"
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
