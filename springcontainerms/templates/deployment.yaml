@@ -18,7 +18,7 @@ spec:
       serviceAccountName: kcontainer-runtime
       containers:
       - name: "springcontainerms"
-        image: "osowski/kcontainer-spring-container-ms:delete-api-v1"
+        image: "osowski/kcontainer-spring-container-ms:0.1.3delete-api-v1"
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
