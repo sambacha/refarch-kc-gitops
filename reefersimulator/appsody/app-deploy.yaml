@@ -27,7 +27,7 @@ spec:
     valueFrom:
       configMapKeyRef:
         key: brokers
-        name: kafka-brokers
+        name: demo-kafka-brokers
   - name: TELEMETRY_TOPIC
     value: reeferTelemetries
   - name: CONTAINER_TOPIC
@@ -36,7 +36,7 @@ spec:
     valueFrom:
       secretKeyRef:
         key: binding
-        name: eventstreams-apikey
+        name: demo-es-apikey
   - name: KAFKA_CERT
     value: /certs/es-cert.pem
   expose: true
