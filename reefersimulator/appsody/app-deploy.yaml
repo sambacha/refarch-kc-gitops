@@ -5,9 +5,7 @@ metadata:
     commit.image.appsody.dev/author: Jerome Boyer <jerome.boyer@gmail.com>
     commit.image.appsody.dev/committer: GitHub <noreply@github.com>
     commit.image.appsody.dev/contextDir: /simulator
-    commit.image.appsody.dev/date: Thu Jan 9 17:38:19 2020 -0800
     commit.image.appsody.dev/message: 'Merge pull request #19 from jbcodeforce/master'
-    image.opencontainers.org/created: "2020-01-13T15:17:09-06:00"
     image.opencontainers.org/revision: bad18355674e29a1b423c06815ae9a503b61ffb7-modified
     stack.appsody.dev/configured: docker.io/appsody/python-flask:0.1
     stack.appsody.dev/created: 2019-11-14T10:29:19+0000
@@ -19,8 +17,7 @@ metadata:
     stack.appsody.dev/version: 0.1.6
   name: reefer-simulator
 spec:
-  #applicationImage: ibmcase/kcontainer-reefer-simulator:appsody-v2-99
-  applicationImage: osowski/kcontainer-reefer-simulator-appsody:0.1.1
+  applicationImage: ibmcase/kcontainer-reefer-simulator-appsody:0.1.16
   createKnativeService: false
   env:
   - name: KAFKA_BROKERS
