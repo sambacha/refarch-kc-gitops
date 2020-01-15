@@ -26,9 +26,9 @@ spec:
         key: brokers
         name: demo-kafka-brokers
   - name: TELEMETRY_TOPIC
-    value: reeferTelemetries
+    value: eda-integration-reeferTelemetries
   - name: CONTAINER_TOPIC
-    value: containers
+    value: eda-integration-containers
   - name: KAFKA_APIKEY
     valueFrom:
       secretKeyRef:
