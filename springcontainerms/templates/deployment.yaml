@@ -37,7 +37,7 @@ spec:
           - name: TRUSTSTORE_ENABLED
             value: "true"
           - name: TRUSTSTORE_PWD
-            value: "changeit"
+            value: "password"
           - name: TRUSTSTORE_PATH
             value: "/config/resources/security/es-ssl/es-cert.jks"
           #- name: JKS_LOCATION
