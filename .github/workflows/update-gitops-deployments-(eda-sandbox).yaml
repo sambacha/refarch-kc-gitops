@@ -1,15 +1,15 @@
-name: Update GitOps deployments
+name: Update GitOps deployments on 'eda-sandbox/api-green-ocp-csplab-local'
 on:
   push:
     branches:
       - master
-      - eda-integration/gse-eda-demos.us-east.containers.appdomain.cloud
+      - eda-sandbox/api-green-ocp-csplab-local
   schedule:
     - cron: '*/20 * * * *'
   repository_dispatch:
 
 env:
-  DESIRED_BRANCH: eda-integration/gse-eda-demos.us-east.containers.appdomain.cloud
+  DESIRED_BRANCH: eda-sandbox/api-green-ocp-csplab-local
 jobs:
   update-gitops-deployments:
     runs-on: ubuntu-latest
