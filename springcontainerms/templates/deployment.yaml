@@ -34,6 +34,12 @@ spec:
             value: "8080"
           - name: APPLICATION_NAME
             value: "springcontainerms"
+          - name: TRUSTSTORE_ENABLED
+            value: "true"
+          - name: TRUSTSTORE_PWD
+            value: "changeit"
+          - name: TRUSTSTORE_PATH
+            value: "/config/resources/security/es-ssl/es-cert.jks"
           #- name: JKS_LOCATION
           #  value: "$JAVA_HOME/jre/lib/security/cacerts"
           - name: KAFKA_BROKERS
@@ -104,3 +110,11 @@ spec:
               secretKeyRef:
                 name: "postgresql-pwd"
                 key: binding
+        volumeMounts:
+          - mountPath: "/config/resources/security/es-ssl"
+            name: eventstreams-truststore
+            readOnly: true
+      volumes:
+        - name: eventstreams-truststore
+          secret:
+            secretName: "es-truststore-jks"
