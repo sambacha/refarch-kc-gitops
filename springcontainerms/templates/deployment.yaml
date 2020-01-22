@@ -48,13 +48,13 @@ spec:
                 key: url
                 optional: true
           - name: KCSOLUTION_CONTAINERS
-            value: "faststart-containers"
+            value: "containers"
           - name: KCSOLUTION_ORDERS
-            value: "faststart-orders"
+            value: "orders"
           - name: KCSOLUTION_REJECTED_ORDERS
-            value: "faststart-rejected-orders"
+            value: "rejected-orders"
           - name: KCSOLUTION_ALLOCATED_ORDERS
-            value: "faststart-allocated-orders"
+            value: "allocated-orders"
           - name: KAFKA_APIKEY
             valueFrom:
               secretKeyRef:
