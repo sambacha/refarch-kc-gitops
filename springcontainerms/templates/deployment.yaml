@@ -15,7 +15,7 @@ spec:
         app: "springcontainerms-selector"
         version: "current"
     spec:
-      serviceAccountName: kcontainer-runtime
+      serviceAccountName: reefer-simulator
       containers:
       - name: "springcontainerms"
         image: "ibmcase/kcontainer-spring-container-ms:0.1.21"
