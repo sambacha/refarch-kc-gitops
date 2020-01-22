@@ -9,7 +9,7 @@ metadata:
     chart: 'springcontainerms-1.0.0'
 spec:
   # Not a required attribute but ArgoCD fails sync without this field included in the YAML
-  host: kcontainer-spring-container-eda-integration.gse-eda-demos-fa9ee67c9ab6a7791435450358e564cc-0001.us-east.containers.appdomain.cloud
+  #host: kcontainer-spring-container-eda-integration.gse-eda-demos-fa9ee67c9ab6a7791435450358e564cc-0001.us-east.containers.appdomain.cloud
   path: /
   to:
     kind: Service
@@ -23,6 +23,6 @@ status:
   - conditions:
     - status: "True"
       type: Admitted
-    host: kcontainer-spring-container-eda-integration.gse-eda-demos-fa9ee67c9ab6a7791435450358e564cc-0001.us-east.containers.appdomain.cloud
+    #host: kcontainer-spring-container-eda-integration.gse-eda-demos-fa9ee67c9ab6a7791435450358e564cc-0001.us-east.containers.appdomain.cloud
     routerName: router
     wildcardPolicy: None

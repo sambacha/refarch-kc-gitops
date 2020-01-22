@@ -39,7 +39,7 @@ spec:
           - name: KAFKA_BROKERS
             valueFrom:
               configMapKeyRef:
-                name: "demo-kafka-brokers"
+                name: "kafka-brokers"
                 key: brokers
           - name: BPM_ANOMALY
             valueFrom:
@@ -48,17 +48,17 @@ spec:
                 key: url
                 optional: true
           - name: KCSOLUTION_CONTAINERS
-            value: "eda-integration-containers"
+            value: "faststart-containers"
           - name: KCSOLUTION_ORDERS
-            value: "eda-integration-orders"
+            value: "faststart-orders"
           - name: KCSOLUTION_REJECTED_ORDERS
-            value: "eda-integration-rejected-orders"
+            value: "faststart-rejected-orders"
           - name: KCSOLUTION_ALLOCATED_ORDERS
-            value: "eda-integration-allocated-orders"
+            value: "faststart-allocated-orders"
           - name: KAFKA_APIKEY
             valueFrom:
               secretKeyRef:
-                name: "demo-es-apikey"
+                name: "eventstreams-apikey"
                 key: binding
           - name: POSTGRESQL_CA_PEM
             valueFrom:
