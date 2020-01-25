@@ -8,6 +8,8 @@ metadata:
   labels:
     chart: 'scoringmp-1.0.0'
 spec:
+  # Not a required attribute but ArgoCD fails sync without this field included in the YAML
+  host: kcontainer-scoringmp-eda-sandbox.apps.green.ocp.csplab.local
   path: /
   to:
     kind: Service
@@ -15,3 +17,12 @@ spec:
     weight: 100
   port:
     targetPort: http
+# Not a required attribute but ArgoCD fails sync without this field included in the YAML
+status:
+  ingress:
+  - conditions:
+    - status: "True"
+      type: Admitted
+    host: kcontainer-scoringmp-eda-sandbox.apps.green.ocp.csplab.local
+    routerName: router
+    wildcardPolicy: None
