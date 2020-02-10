@@ -18,7 +18,7 @@ spec:
       serviceAccountName: reefer-simulator
       containers:
       - name: "scoringmp"
-        image: "ibmcase/kcontainer-scoringmp-ms:0.1.38"
+        image: "ibmcase/kcontainer-scoringmp-ms:0.1.41"
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
