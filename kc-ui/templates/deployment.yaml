@@ -15,7 +15,7 @@ spec:
         app: "kc-ui-selector"
         version: "current"
     spec:
-      serviceAccountName: kcontainer-runtime
+      serviceAccountName: reefer-simulator
       containers:
       - name: "kc-ui"
         image: "ibmcase/kcontainer-ui:0.1.24"
