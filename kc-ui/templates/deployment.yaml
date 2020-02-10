@@ -1,0 +1,57 @@
+---
+# Source: kc-ui/templates/deployment.yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "kc-ui-deployment"
+  labels:
+    chart: 'kc-ui-1.0.0'
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        app: "kc-ui-selector"
+        version: "current"
+    spec:
+      serviceAccountName: kcontainer-runtime
+      containers:
+      - name: "kc-ui"
+        image: "ibmcase/kcontainer-ui:0.1.24"
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3010
+          initialDelaySeconds: 3000
+          periodSeconds: 1000
+        ports:
+        - containerPort: 3010
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "300Mi"
+        env:
+          - name: APPLICATION_NAME
+            value: "RELEASE-NAME"
+          - name: PORT
+            value : "3010"
+          - name: CONTAINERMS_SERVICE_HOST
+            value: "springcontainerms-service"
+          - name: CONTAINERMS_SERVICE_PORT
+            value: "8080"
+          - name: KAFKA_BROKERS
+            valueFrom:
+              configMapKeyRef:
+                name: "kafka-brokers"
+                key: brokers
+          - name: PROBLEM_TOPIC
+            value: "bluewaterProblem"
+          - name: SHIP_TOPIC
+            value: "bluewaterShip"
+          - name: KAFKA_APIKEY
+            valueFrom:
+              secretKeyRef:
+                name: "eventstreams-apikey"
+                key: binding
