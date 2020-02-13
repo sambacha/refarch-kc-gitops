@@ -72,10 +72,11 @@ spec:
                 key: password
                 optional: true
           - name: KCSOLUTION_CONTAINERS
-            valueFrom:
-              configMapKeyRef:
-                name: "kafka-topics"
-                key: "containersTopic"
+            value: "containers"
+            #valueFrom:
+            #  configMapKeyRef:
+            #    name: "kafka-topics"
+            #    key: "containersTopic"
           - name: KCSOLUTION_ORDERS
             valueFrom:
               configMapKeyRef:
