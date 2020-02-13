@@ -72,26 +72,25 @@ spec:
                 key: password
                 optional: true
           - name: KCSOLUTION_CONTAINERS
-            value: "containers"
-            #valueFrom:
-            #  configMapKeyRef:
-            #    name: "kafka-topics"
-            #    key: "containersTopic"
-          - name: KCSOLUTION_ORDERS
             valueFrom:
               configMapKeyRef:
-                name: "kafka-topics"
-                key: "ordersTopic"
+                name: kafka-topics
+                key: containersTopic
+          - name: KCSOLUTION_ORDERS
+            valueFrom:
+              configMaKeyRef:
+                name: kafka-topics
+                key: ordersTopic
           - name: KCSOLUTION_REJECTED_ORDERS
             valueFrom:
               configMapKeyRef:
-                name: "kafka-topics"
-                key: "rejectedOrdersTopic"
+                name: kafka-topics
+                key: rejectedOrdersTopic
           - name: KCSOLUTION_ALLOCATED_ORDERS
             valueFrom:
               configMapKeyRef:
-                name: "kafka-topics"
-                key: "allocatedOrdersTopic"
+                name: kafka-topics
+                key: allocatedOrdersTopic
           - name: LOGGING_CONTAINER_MS_ROOT
             value: "INFO"
           - name: LOGGING_CONTAINER_MS_CONSUMER_CONFIG

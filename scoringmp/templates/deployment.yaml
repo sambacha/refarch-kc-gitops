@@ -63,9 +63,15 @@ spec:
           ### Reactive Messaging topics
           #############################
           - name: MP_MESSAGING_INCOMING_REEFERTELEMETRY_TOPIC
-            value: "reeferTelemetry"
+            valueFrom:
+              configMapKeyRef:
+                name: kafka-topics
+                key: reeferTelemetryTopic
           - name: MP_MESSAGING_OUTGOING_CONTAINERS_TOPIC
-            value: "containers"
+            valueFrom:
+              configMapKeyRef:
+                name: kafka-topics
+                key: containersTopic
         volumeMounts:
           - mountPath: "/opt/ol/wlp/usr/servers/defaultServer/bootstrap.properties"
             subPath: "bootstrap.properties"
